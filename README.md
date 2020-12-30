@@ -1,10 +1,32 @@
-   src  
-   &nbsp;&nbsp;&nbsp;   |-- app.js	&nbsp;&nbsp;&nbsp;		app entry point  
-   &nbsp;&nbsp;&nbsp;   |-- /api		&nbsp;&nbsp;&nbsp;	controller layer: api routes  
-   &nbsp;&nbsp;&nbsp;   |-- /config		&nbsp;&nbsp;&nbsp;	config settings, env variables  
-   &nbsp;&nbsp;&nbsp;   |-- /services	&nbsp;&nbsp;&nbsp;	service layer: business logic  
-   &nbsp;&nbsp;&nbsp;  |-- /models		&nbsp;&nbsp;&nbsp;	data access layer: database models	  
-   &nbsp;&nbsp;&nbsp;  |-- /scripts		&nbsp;&nbsp;&nbsp; miscellaneous NPM scripts  
-   &nbsp;&nbsp;&nbsp;  |-- /subscribers	&nbsp;&nbsp;&nbsp;	async event handlers  
-   &nbsp;&nbsp;&nbsp;   |-- /test         &nbsp;&nbsp;&nbsp;      test suites  
-   &nbsp;&nbsp;&nbsp;   |-- /web         &nbsp;&nbsp;&nbsp;      website files
+## BudgetPlanner
+#### About
+
+BudgetPlanner is a budget planning web app made in NodeJS using AirBNB coding guidlines.
+#### Installation
+The web app can be run by cloning the repo:
+
+`git clone git@github.com:joely-w/BudgetPlanner.git` 
+
+From then, you can initiate the npm project:
+
+`npm install`
+
+To configure the web app, you need to change the environmental variables file located at
+`config/config.env`
+
+You'll also need to create a database structure, for which a creation script will be uploaded soon!
+ 
+#### Project structure:
+  
+```
+    src  
+       |-- app.js   app entry point  
+       |-- /api     controller layer: api routes  
+       |-- /config      config settings, env variables  
+       |-- /services    service layer: business logic  
+       |-- /models      data access layer: database models	  
+       |-- /scripts     miscellaneous NPM scripts  
+       |-- /subscribers     async event handlers  
+       |-- /test    test suites  
+       |-- /web     website files
+```
