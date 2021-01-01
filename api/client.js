@@ -4,8 +4,6 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/login', (req, res) => {
-  res.send('No login yet');
-});
+// Currently no routes for web client
 
 module.exports = router;
