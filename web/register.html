@@ -20,34 +20,38 @@
             crossorigin="anonymous"></script>
     <!-- Main stylesheet CSS -->
     <link rel="stylesheet" href="stylesheets/main.css">
+    <!-- Registration JS -->
+    <script src="scripts/register.js"></script>
 
 </head>
 <body>
 <div class="container registration">
     <div class="form">
         <h1>Register</h1>
-        <form>
+        <div id="error"></div>
+
+        <form id="register">
             <div class="col-xs-6 form-group">
                 <label>First name:
-                    <input type="text" class="form-control" id="first_name">
+                    <input type="text" class="form-control" id="first_name" pattern=".{1,128}" required>
                 </label>
             </div>
             <div class="col-xs-6 form-group">
                 <label>Last name:
-                    <input type="text" class="form-control" id="last_name">
+                    <input type="text" class="form-control" id="last_name" pattern=".{1,128}" required>
                 </label>
             </div>
             <div class="col-xs-12 form-group">
                 <label>Email
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" id="email" pattern=".{1,256}" required>
                 </label>
             </div>
             <div class="col-xs-12 form-group">
                 <label>Password
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" class="form-control" id="password" pattern=".{1,64}" required>
                 </label>
             </div>
-            <button class="btn btn-primary">Register</button>
+            <button id="register_button" class="btn btn-primary">Register</button>
         </form>
     </div>
 </div>
