@@ -5,12 +5,12 @@ const Register = require('../services/register.js');
 
 const router = express.Router();
 
-router.get('/login', (req, res) => {
+router.post('/register', (req, res) => {
   const registration = new Register(req.body.user);
   if (registration.registerUser()) {
     res.send({ success: true });
   } else {
-    res.send({ success: false });
+    res.send({ success: false, error: registration.error });
   }
 });
 
