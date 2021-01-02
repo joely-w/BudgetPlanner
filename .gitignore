@@ -2,3 +2,5 @@
 /.idea/
 package-lock.json
 /config/*.env
+/web/stylesheets/*.css
+/web/stylesheets/*.css.map
