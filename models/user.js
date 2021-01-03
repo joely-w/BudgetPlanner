@@ -1,4 +1,3 @@
-const crypto = require('crypto');
 const Database = require('./database');
 
 class UserDB extends Database {
@@ -13,8 +12,8 @@ class UserDB extends Database {
     this.password = password;
   }
 
-  login(callback) {
-    this.connection.query('SELECT * FROM users WHERE email = ? and password = ?', [this.email, this.password], (result) => callback(result));
+  async login() {
+    return this.connection.query('SELECT * FROM users WHERE email = ? and password = ?', [this.email, this.password]);
   }
 }
 
