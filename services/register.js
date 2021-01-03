@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const RegisterDB = require('../models/user');
+const RegisterDB = require('../models/register');
 
 class Register extends RegisterDB {
   constructor(data) {
