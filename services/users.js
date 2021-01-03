@@ -7,8 +7,23 @@ class User extends UserDB {
     this.hashPassword();
   }
 
+  async attemptLogin() {
+    const response = await this.login();
+    if (response && response.length > 0) {
+      return {
+        email: this.email,
+        first_name: response[0][0].first_name,
+        last_name: response[0][0].last_name,
+        logged_in: true,
+      };
+    }
+    return { logged_in: false };
+  }
+
   hashPassword() {
-    this.password = crypto.createHash('sha256').update(this.password).digest('hex');
+    this.password = crypto.createHash('sha256')
+      .update(this.password)
+      .digest('hex');
     return true;
   }
 }
