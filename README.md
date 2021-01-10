@@ -12,7 +12,7 @@ From then, you can initiate the npm project:
 `npm install`
 
 To configure the web app, you need to change the environmental variables file located at
-`config/config.env`
+`config/example-config.env` and rename `example-config.env` to `.env`.
 
 You'll also need to create a database structure, for which a creation script will be uploaded soon!
  
