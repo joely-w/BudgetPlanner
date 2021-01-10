@@ -1,3 +1,6 @@
+/**
+ * Script to validate and submit logins
+ */
 $(document).ready(() => {
   $('#login').on('submit', () => {
     const loginForm = $('#login');
