@@ -17,10 +17,17 @@ class RegisterDB extends Database {
   }
 
   /**
+   * Get users with set email in DB
+   */
+  async checkUser() {
+    return this.connection.query('SELECT * FROM users WHERE email = ?', [this.email]);
+  }
+
+  /**
    * Register user in database
    */
-  register() {
-    this.connection.query('INSERT INTO users(email, password, first_name, last_name) VALUES(?,?,?,?)',
+  async register() {
+    await this.connection.query('INSERT INTO users(email, password, first_name, last_name) VALUES(?,?,?,?)',
       [this.email, this.password, this.name.first, this.name.last]);
   }
 }
