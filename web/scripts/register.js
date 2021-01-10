@@ -1,3 +1,6 @@
+/**
+ * Script to validate and submit registration form
+ */
 $(document).ready(() => {
   $('#register').on('submit', () => {
     const registrationForm = $('#register');
@@ -16,7 +19,7 @@ $(document).ready(() => {
     };
     $.post('/api/register', data, (response) => {
       if (response.success) {
-        $('#form').html('<h1>Registration successful!</h1><span>You can now <a href="login.html">login</a></span>');
+        $('.form').html('<h1>Registration successful!</h1><span>You can now <a href="login.html">login</a></span>');
       } else {
         $('#error').html(`<strong class="red">Error:</strong> ${response.error}`);
       }
