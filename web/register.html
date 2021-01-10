@@ -10,13 +10,11 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous"></script>
     <!-- Bootstrap minified CSS -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Bootstrap minified JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
     <!-- Main stylesheet CSS -->
     <link rel="stylesheet" href="stylesheets/main.css">
@@ -25,35 +23,68 @@
 
 </head>
 <body>
-<div class="container registration">
-    <div class="form">
-        <h1>Register</h1>
-        <div id="error"></div>
-
-        <form id="register">
-            <div class="col-xs-6 form-group">
-                <label>First name:
-                    <input type="text" class="form-control" id="first_name" pattern=".{1,128}" required>
-                </label>
-            </div>
-            <div class="col-xs-6 form-group">
-                <label>Last name:
-                    <input type="text" class="form-control" id="last_name" pattern=".{1,128}" required>
-                </label>
-            </div>
-            <div class="col-xs-12 form-group">
-                <label>Email
-                    <input type="email" class="form-control" id="email" pattern=".{1,256}" required>
-                </label>
-            </div>
-            <div class="col-xs-12 form-group">
-                <label>Password
-                    <input type="password" class="form-control" id="password" pattern=".{1,64}" required>
-                </label>
-            </div>
-            <button id="register_button" class="btn btn-primary">Register</button>
-        </form>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Budget Planner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="register.html">Register</a>
+                    <span class="sr-only">(current)</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+</nav>
+<header class="masthead">
+    <div class="container h-100">
+        <div class="h-100 align-items-center registration">
+            <div class="form">
+                <h1 class="font-weight-light">Register</h1>
+                <div id="error"></div>
+
+                <form id="register">
+                    <div class="form-group">
+                        <label>First name:
+                            <input type="text" class="form-control" id="first_name" pattern=".{1,128}" required>
+                        </label>
+                    </div>
+                    <div class="col-xs-6 form-group">
+                        <label>Last name:
+                            <input type="text" class="form-control" id="last_name" pattern=".{1,128}" required>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 form-group">
+                        <label>Email
+                            <input type="email" class="form-control" id="email" pattern=".{1,256}" required>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 form-group">
+                        <label>Password
+                            <input type="password" class="form-control" id="password" pattern=".{1,64}" required>
+                        </label>
+                    </div>
+                    <button id="register_button" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</header>
+
 </body>
 </html>
