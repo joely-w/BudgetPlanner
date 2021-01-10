@@ -15,5 +15,18 @@ class Database {
       queueLimit: 0,
     });
   }
+
+  async status() {
+    return new Promise((resolve) => {
+      this.connection.getConnection((err, connection) => {
+        if (connection) {
+          resolve(true);
+        } else {
+          resolve(new Error('Database connection failed!'));
+        }
+      });
+      resolve(true);
+    });
+  }
 }
 module.exports = Database;
