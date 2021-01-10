@@ -9,7 +9,7 @@ class User extends UserDB {
 
   async attemptLogin() {
     const response = await this.login();
-    if (response && response.length > 0) {
+    if (response && response[0].length > 0) {
       return {
         email: this.email,
         first_name: response[0][0].first_name,
