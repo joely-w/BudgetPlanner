@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+const validator = require('email-validator');
 const RegisterDB = require('../models/register');
 
 class Register extends RegisterDB {
@@ -7,12 +8,7 @@ class Register extends RegisterDB {
   }
 
   validateEmail() {
-    const emailFormat = RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
-    if (!emailFormat.test(this.email)) {
-      this.error = 'Email is invalid';
-      return false;
-    }
-    return true;
+    return validator.validate(this.email);
   }
 
   validateName() {
@@ -28,9 +24,19 @@ class Register extends RegisterDB {
     return true;
   }
 
-  registerUser() {
-    if (this.validateEmail() && this.validateName() && this.hashPassword()) {
-      this.register();
+  async userUnique() {
+    const user = (await this.checkUser())[0];
+    if (user.length > 0) {
+      this.error = 'Email already registered!';
+      return false;
+    }
+    return true;
+  }
+
+  async registerUser() {
+    if (this.validateEmail() && this.validateName()
+      && this.hashPassword() && await this.userUnique()) {
+      await this.register();
       return true;
     }
     return false;
