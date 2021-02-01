@@ -13,7 +13,7 @@ $(document).ready(() => {
       email: $('#email').val(),
       password: $('#password').val(),
     };
-    $.post('/api/login', data, (response) => {
+    $.post('/api/user/login', data, (response) => {
       if (response.logged_in) {
         $('.form').html(`<h1>Login successful!</h1><span>Welcome, ${response.first_name}!</span><br/><a href="/">Go home</a>`);
       } else {
