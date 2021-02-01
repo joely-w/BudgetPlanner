@@ -9,7 +9,7 @@ function loadDetails(userDetails) {
   $('.details.email').text(userDetails.email);
 }
 
-$.post('/api/status', (response) => {
+$.post('/api/user/status', (response) => {
   if (response.logged_in) {
     $(document).ready(() => {
       $('.account').toggle();
@@ -17,7 +17,7 @@ $.post('/api/status', (response) => {
     });
     loadDetails(response);
     $('#logout').click(() => {
-      $.post('/api/logout', (logoutResponse) => {
+      $.post('/api/user/logout', (logoutResponse) => {
         if (logoutResponse.success) {
           window.location.replace('/');
         }
