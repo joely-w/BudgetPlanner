@@ -1,3 +1,4 @@
+/** Service for logging in and managing user * */
 const crypto = require('crypto');
 const UserDB = require('../models/user');
 
@@ -25,6 +26,11 @@ class User extends UserDB {
       .update(this.password)
       .digest('hex');
     return true;
+  }
+
+  async deleteUser() {
+    const deletion = await this.delete();
+    return deletion[0].affectedRows === 1;
   }
 }
 
