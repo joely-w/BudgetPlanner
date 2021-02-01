@@ -1,12 +1,10 @@
+/** Service for registering user * */
+
 const crypto = require('crypto');
 const validator = require('email-validator');
 const RegisterDB = require('../models/register');
 
 class Register extends RegisterDB {
-  constructor(data) {
-    super(data);
-  }
-
   validateEmail() {
     return validator.validate(this.email);
   }
