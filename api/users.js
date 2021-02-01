@@ -1,18 +1,9 @@
 /* Router for login/registration requests */
 const express = require('express');
-const session = require('express-session');
-const config = require('../config');
 const Register = require('../services/register');
 const User = require('../services/users');
 
 const router = express.Router();
-
-// Use express session middleware
-router.use(session({
-  secret: config.session.secret,
-  resave: false,
-  saveUninitialized: false,
-}));
 
 router.post('/register', async (req, res) => {
   // Instantiate registration object with data
