@@ -1,7 +1,7 @@
 /**
  * Script to run on every page
  */
-$.post('/api/status', (response) => {
+$.post('/api/user/status', (response) => {
   $(document).ready(() => {
     if (response.logged_in) {
       $('.account').toggle();
