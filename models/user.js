@@ -15,6 +15,10 @@ class UserDB extends Database {
   async login() {
     return this.connection.query('SELECT * FROM users WHERE email = ? and password = ?', [this.email, this.password]);
   }
+
+  async delete() {
+    return this.connection.query('DELETE FROM users WHERE email = ? and password = ? ', [this.email, this.password]);
+  }
 }
 
 module.exports = UserDB;
