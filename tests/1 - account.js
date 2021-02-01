@@ -53,12 +53,25 @@ describe('Registration', () => {
   });
 });
 describe('Login', () => {
-  context('Valid login', async () => {
+  context('Valid login', () => {
     it('should login valid user', async () => {
       expect(await login(dataset.valid.email, dataset.valid.password)).to.equal(true);
     });
+  });
+  context('Invalid login', () => {
     it('should not login invalid user', async () => {
       expect(await login(dataset.valid.email, dataset.invalid.password)).to.equal(false);
+    });
+    it('should not login blank user', async () => {
+      expect(await login('', '')).to.equal(false);
+    });
+  });
+});
+describe('Account management', () => {
+  context('Deletion', () => {
+    const user = new User(dataset.valid.email, dataset.valid.password);
+    it('should delete existing user', async () => {
+      expect(await user.deleteUser()).to.equal(true);
     });
   });
 });
