@@ -17,7 +17,7 @@ $(document).ready(() => {
         last_name: $('#last_name').val(),
       },
     };
-    $.post('/api/register', data, (response) => {
+    $.post('/api/user/register', data, (response) => {
       if (response.success) {
         $('.form').html('<h1>Registration successful!</h1><span>You can now <a href="login.html">login</a></span>');
       } else {
